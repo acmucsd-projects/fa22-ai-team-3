@@ -2,7 +2,6 @@
 
 <div class="alert alert-block alert-info">
 Table of Contents: <br>
-    https://github.com/acmucsd-projects/fa22-ai-team-3
 <ul>
     <li>1. <a href="https://github.com/acmucsd-projects/fa22-ai-team-3/blob/main/resources.md#1-introduction-">Introduction</a></li>
     <li>2. <a href="https://github.com/acmucsd-projects/fa22-ai-team-3/blob/main/resources.md#2-resources-">Resources</a></li>
@@ -36,9 +35,8 @@ Deep Learning:
 # 3. Advice 🤔
 
 - Toy with the code. Experiment with it and see how it works.
-- If you read Aurélien Géron's book (chapters 15 and 16 or the entire deep learning section), I advise you to do the exercises and organize your code in this repo!
+- If you read Aurélien Géron's book, I advise you to do the exercises and organize your code in this repo!
 - Tutorial hell is a commonly thrown around phrase describing the difficulties of the wealth of tutorials available to you. Some are confusing. Sometimes there are too many. Some are not comprehensive. Some don't include the information you want. Sometimes there are too many tutorials and it seems as if your progression has been halted. My advice is simply to pick a reliable source. Stick with it. Navigate through other tutorials if needed, but look elsewhere to learn more once you have mastered your fundamentals.
-- Don't get discouraged! NLP as with any field is not easy. The initial introduction will always be overwhelming. However, with time, this feeling decays. 
 - Start small and work your way up. Start by learning the basics, implementing basic projects. Then, once you've grown comfortable with this cycle, upgrade to more advanced knowledge until you are ready to tackle your project. 
 
 # 4. Ending Note
