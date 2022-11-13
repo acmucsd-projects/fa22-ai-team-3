@@ -31,6 +31,7 @@ with modelTraining:
     st.header('Time to train model')
     st.text('Choose which hyperparamaters you want to use')
     
-    time_col, V1 = st.columns(2)
+    time_col, amount_col = st.columns(2)
     time_elapsed= time_col.slider('How much time has elapsed since purchase 1?', min_value=0, max_value=20000, value=20, step=2)
+    user_amnt= amount_col.selectbox('How much money are you spending in this purchse?', options=[50, 100, 1000, 10000], index=0)
     
