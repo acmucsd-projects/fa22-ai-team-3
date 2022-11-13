@@ -92,7 +92,7 @@ with modelTraining:
                                     scoring= 'recall', verbose=2, n_jobs=-1)
     grid_search_pspp.fit(xTrain, yTrain)
 
-    print("%0.9f recall with a standard deviation of %0.9f" % (scores.mean(), scores.std()))
+    st.write("%0.9f recall with a standard deviation of %0.9f" % (scores.mean(), scores.std()))
 
 
 
