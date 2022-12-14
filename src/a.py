@@ -4,6 +4,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pprint
+from sklearn.preprocessing import StandardScaler, QuantileTransformer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from pprint import pprint
+from sklearn.model_selection import train_test_split
+import random
+import pickle
+import joblib
+import xgboost
 
 st.set_page_config(
     page_title = "ACM AI User App"
@@ -11,11 +21,9 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    
 
     [data-testid = "stAppViewContainer"]{
-    background-color: #e7fcf8;
-    background-image: linear-gradient(180deg, grey, silver);
+    background-color: white;
     }
 
     [data-testid = "stHeader"]{
@@ -28,6 +36,7 @@ st.markdown(
 
     [data-testid = "stSidebar"]{
     left: 2rem;
+    background-color: white;
     }
     
     </style>
@@ -38,7 +47,29 @@ st.markdown(
 
 st.sidebar.markdown(
     """
-    <h2 style="color: White;">Team 3 AI at UCSD</h2>
+    <h2>The Real Team Tu at UCSD:</h2>
+
+    <style> 
+    p {outline-color: silver;}
+    p.solid{outline-style:solid;}
+    </style>
+
+    <p class="solid">
+        <ul>
+            <li><strong>Arvin:</strong> CS major from Marshall College</li>
+            <li><strong>Chuong:</strong> CS major from Marshall College</li>
+            <li><strong>Max:</strong> CS major from Sixth College</li>
+            <li><strong>Rebecca:</strong> Cog Sci major from Sixth 
+            College</li>
+            <li><strong>Rohan:</strong> ECE major from Marshall College</li>
+            <li><strong>Siya:</strong> CS major from Seventh College</li>
+            <li><strong>Vincent:</strong> CS major from Sixth College</li>
+        </ul>
+        <p>
+        <strong>Our team was established in the Fall of 2022. Our focus for this project
+        is implementing Machine Learning to predict credit card fraud.
+        </p>
+    </p>
     """,
     unsafe_allow_html=True
 )
@@ -47,8 +78,8 @@ st.sidebar.markdown(
 
 selected = option_menu(
     menu_title="Main Menu",
-    options=["User Application", "Data", "EDA"],
-    icons=["credit-card", "file-spreadsheet", "bar-chart-fill"],
+    options=["User Application", "EDA"],
+    icons=["credit-card", "bar-chart-fill"],
     menu_icon="cast",
     orientation="horizontal",
 )
@@ -74,6 +105,8 @@ if selected == "User Application":
 
     age = st.slider('How old are you?*', 0, 150, 40)
 
+    transaction_amt = st.slider("transaction amt", 0, 1000000)
+
     purchase_date = st.date_input(
         'When was the purchase made?',
     )
@@ -83,36 +116,46 @@ if selected == "User Application":
     st.write('Your age is:  ', age)
     st.write('When the purchase was made:  ', purchase_date)
 
-    if st.button("Submit"):
-        st.balloons()
+### Training Model
+def load_model():
+    with open('../models/XGBoost.pkl', 'rb') as file:
+        data = joblib.load(file)
+    return data
 
-# Loading Raw Data
-df = pd.read_csv('creditcard.csv')
+model = load_model()
+
+df = pd.read_csv("../input/creditcard.csv")
 df = df.rename(columns={'Class': 'Fraud'})
+df['Fraud'] = df['Fraud'].astype(int)
 
-fraud = df.loc[df['Fraud'] == 1]
-fraud.head()
+X = df.drop(['Fraud'], axis = 1)
+Y = df["Fraud"]
 
-info = df.info()
+xData = X.values
+yData = Y.values
+xTrain, xTest, yTrain, yTest = train_test_split(
+        xData, yData, test_size = 0.2, random_state = 42)
 
-fraud = df[df['Fraud'] == 1]
-valid = df[df['Fraud'] == 0]
-outlierFraction = len(fraud)/float(len(valid))
+def load_pipeline():
+    with open('../models/preprocessing_pipeline.pkl', 'rb') as f:
+        pipe = joblib.load(f)
+    return pipe
 
-fraud.Amount.describe()
-if selected == "Data":
-    st.title("Data Visualization of Credit Card Fraud")
+pipe = load_pipeline()
 
-    st.header('Raw Data:')
-    st.write(df)
-    st.header('Fraud:')
-    st.write(fraud)
-    st.header('Valid:')
-    st.write(valid)
-    st.header('Outlier:')
-    st.write("Outlier in decimal: ", outlierFraction)
-if selected == "EDA":
-    st.title("EDA")
+#trying to add in random predictions of random row to app
+if st.button("Submit"):
+    st.balloons()
+    ind = random.randint(0, (age + transaction_amt)%df.shape[0])
+    row = df.iloc[ind]
+    row = row.drop('Fraud')
+    row = np.expand_dims(row, axis = 0)
+    row = pipe.transform(row)
+    prediction = model.predict(row)
+    st.text(f"prediction: {prediction}")
+
+# if selected == "EDA":
+#     st.title("EDA")
 
 
 
