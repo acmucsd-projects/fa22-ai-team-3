@@ -615,7 +615,7 @@ if selected == "User Application":
 
         if submit and complete == 100.0:
             with st.spinner("Please wait for the algorithm to be executed..."):
-                time.sleep(0)
+                time.sleep(5)
 
             ind = random.randint(0, (age + transaction_amt)%df.shape[0])
             row = df.iloc[ind]
