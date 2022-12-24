@@ -17,6 +17,32 @@ import xgboost
 import time
 # from link_button import link_button
 
+def name_intro(name, major_college):
+     st.markdown("""
+        <li style="color:black; font-family: Lucida Handwriting, cursive;">
+        <strong style="color: black">{name}:</strong>{major_college}</li>""", 
+        unsafe_allow_html=True,)
+
+def line_break():
+    st.markdown(
+        """
+        <br>
+        <p  style="color:black; font-family: Lucida Handwriting, cursive;
+        font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">&nbsp</p>
+        """,
+        unsafe_allow_html=True,)
+
+def warning(input):
+    st.warning(input, icon="⚠️")
+
+def instruction():
+    st.markdown(
+        """
+        <br>
+        <p  style="color:black; font-size: 1.5em;"><strong>
+        Please Answer the Questions Below:</p>""",
+        unsafe_allow_html=True,)
+
 st.set_page_config(
     page_title = "ACM AI User App"
 )
@@ -25,7 +51,8 @@ st.markdown(
     <style>
 
     [data-testid = "stAppViewContainer"]{
-        background-color: rgba(255,182,198,1);
+        background-color: rgba(251, 238, 193, 1);
+        background-image: url("https://cdn.dribbble.com/users/1228088/screenshots/14881382/media/e8ae1e400862ae7410214f1a9680f392.png?compress=1&resize=1600x1200&vertical=top")
     }
 
     [data-testid = "stHeader"]{
@@ -37,7 +64,7 @@ st.markdown(
     }
 
     [data-testid = "stSidebar"]{
-        background-color: rgba(110,12,37,1);
+        background-color: rgba(0,0,0,0);
         left: 2rem;
     }
     
@@ -77,84 +104,104 @@ pipe = load_pipeline()
 
 st.sidebar.markdown(
     """
-    <h2 style="color:silver">The Real Team Tu at UCSD:</h2>
+    <h2 style="color:black">The Real Team Tu at UCSD:</h2>
 
     <style> 
-    p {outline-color: silver;}
+    p {outline-color: black;}
     p.solid{outline-style:solid;}
     </style>
 
     <p class="solid">
         <ul >
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Arvin:</strong> CS major from 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Arvin:</strong> CS major from 
             Marshall College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Chuong:</strong> CS major from 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Chuong:</strong> CS major from 
             Marshall College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro ">Max:</strong> CS major from Sixth 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black ">Max:</strong> CS major from Sixth 
             College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Rebecca:</strong> Cog Sci major 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Rebecca:</strong> Cog Sci major 
             from Sixth College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Rohan:</strong> ECE major from 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Rohan:</strong> ECE major from 
             Marshall College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Siya:</strong> CS major from 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Siya:</strong> CS major from 
             Seventh College</li>
-            <li style="color:silver; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: gainsboro">Vincent:</strong> CS major from 
+            <li style="color:black; font-family: Lucida Handwriting, cursive;">
+            <strong style="color: black">Vincent:</strong> CS major from 
             Sixth College</li>
         </ul>
-        <p style="color:silver">
-        <strong>Our team was established in the Fall of 2022. Our focus for this project
+        <p style="color:black">
+        Our team was established in the Fall of 2022. Our focus for this project
         is implementing Machine Learning to predict credit card fraud.
         </p>
     </p>
 
     <br><br><br>
-    <h2 style="color:silver">Useful Resources on Google:</h2>
+    <h2 style="color:black">Useful Resources on Google:</h2>
 
     <p class="solid">
         <ul>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code">
-            <strong>500 AI Machine Learning Deep Learning Computer Projects</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2"
+            500 AI Machine Learning Deep Learning Computer Projects</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
             href="https://docs.google.com/document/d/1tLHnR9rI1fBc-b1BndALWmgHrIKGGWuHBzn-bqoyRbQ/edit?usp=sharing">
-            <strong>Credit Card Fraud ML Project Overview</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2"
+            Credit Card Fraud ML Project Overview</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
             href="https://www.youtube.com/watch?v=vmEHCJofslg&start=1">
-            <strong>Python Pandas Data Science</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            Python Pandas Data Science</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://stackoverflow.com/questions/70967042/matplotlib-not-working-in-macos-shows-error-i-tried-to-reinstall-everything-bu">
-            <strong>Needing Help Installing MatplotLib Not Working in macOS</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            Needing Help Installing MatplotLib Not Working in macOS</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_multi_metric_evaluation.html">
-            <strong>Demotrations of Multi-Metric Evaluations on Cross_Val_Score and Gri_Search</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            Demotrations of Multi-Metric Evaluations on Cross_Val_Score and Gri_Search</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://www.youtube.com/watch?v=xl0N7tHiwlw">
-            <strong>Building a Machine Learning Web App from Scratch using Streamlit</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            Building a Machine Learning Web App from Scratch using Streamlit</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://stackoverflow.com/questions/43691380/how-to-save-load-xgboost-model">
-            <strong>How to Save & Load xgboost Model</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            How to Save & Load xgboost Model</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_3_GettingStarted/SimulatedDataset.html">
-            <strong>How to Create a Web Application with Fraud Detection Handbook</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px; line-height: 2" 
+            How to Create a Web Application with Fraud Detection Handbook</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://www.youtube.com/watch?v=0Hhqf8L-b_0">
-            <strong>How to Install Anaconda on MacOS</a></li>
-            <li style="color:silver"><a style="color: gainsboro; text-decoration:none; font-size: 14px;" 
+            How to Install Anaconda on MacOS</a></li>
+            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px;" 
             href="https://www.dev2qa.com/how-to-fix-the-python-pillow-error-importerror-dll-load-failed-while-importing-_imaging-the-specified-module-could-not-be-found/">
-            <strong>How to Fix the Python Pillow Error ImportError</a></li>
+            How to Fix the Python Pillow Error ImportError</a></li>
         </ul>
-        <p style="color:silver">
-        <strong>Above are some of the resources we found extremely useful during 
+        <p style="color:black">
+        Above are some of the resources we found extremely useful during 
         our journey of training and building our model to predict credit card frauds. 
-        </p><br><br><br>
+        </p>
     </p>
+
+    <br><br><br>
+    <h2 style="color:black">Citations:</h2>
+
+    <p class="solid">
+        <ul>
+            <li style="color: black; font-size: 14px;">&nbsp&nbspAxelton, Karen. “Do You Really Need a Credit Card?” Experian, Experian, 17 Nov. 2022, 
+            <a style="color: black; text-decoration:none; line-height: 2"
+            href="https://www.experian.com/blogs/ask-experian/do-you-really-need-a-credit-card/">
+            https://www.experian.com/blogs/ask-experian/do-you-really-need-a-credit-card/.</a></li>
+            <li style="color: black;font-size: 14px;">&nbsp&nbspBolger, Nathan. “Lab.® - 'See the Future First.'” Dribbble, 2021,
+            <a style="color: black; text-decoration:none; line-height: 2"
+            href="https://dribbble.com/shots/14881382-lab-see-the-future-first">
+            https://dribbble.com/shots/14881382-lab-see-the-future-first.</a></li>
+        </ul>
+        <p style="color:black">
+        Above are some of the cites that we would like to acknowledge the work and writings used
+        in order for our project to be made possible.
+        </p>
+    </p><br><br><br>
     """,
     unsafe_allow_html=True
 )
@@ -169,7 +216,7 @@ selected = option_menu(
     orientation="horizontal",
 )
 if selected == "User Application":
-    tab1, tab2, tab3,= st.tabs(["Page 1", "Page 2", "Page 3"])
+    tab1, tab2, tab3,= st.tabs([" One ", " Two ", " Three "])
     complete = 0   
     decimal_num = float((100/3)/4 )
     third = 100/3
@@ -181,43 +228,20 @@ if selected == "User Application":
 #### Page 1
 
     with tab1:
-        st.markdown(
-            """
-            <br>
-            <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-            font-size: 2.5em;"><strong style="color: rgba(110,12,37,1)">
-            Please Answer the Questions Below:</p>
-            """,
-            unsafe_allow_html=True,
-            )
+        instruction()
         col1, col2 = st.columns(2)
 
 ### First and Last Name
         with col1:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                First and Last Name*:</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            first = st.text_input('First', '')
+            line_break()
+            first = st.text_input('First*', '')
 
         with col2:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            last = st.text_input('Last', '')
+            line_break()
+            last = st.text_input('Last*', '')
 
         if first == '' or last == '':
-            st.warning('Warning. Please Fill in your first and last name.', icon="⚠️")
+            warning('Warning. Please fill in your first and last name.')
         
         else:
             complete += decimal_num
@@ -227,73 +251,34 @@ if selected == "User Application":
         col3, col4, col5, col6= st.columns([0.5, 0.25, 0.2, 0.2])
 
         with col3:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                Address*:</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            address = st.text_input('Address', '')
+            line_break()
+            address = st.text_input('Address*', '')
         
         with col4:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            city = st.text_input('City', '')
+            line_break()
+            city = st.text_input('City*', '')
 
-        
         with col5:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            state = st.text_input('State', '')
+            line_break()
+            state = st.text_input('State*', '')
         
         with col6:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            zip = st.text_input('Zip Code', '')
+            line_break()
+            zip = st.text_input('Zip Code*', '')
 
         if address == '' or city == '' or state == '' or zip == '':
-            st.warning('Warning. Please Fill in your address.', icon="⚠️")
-        
+            warning('Warning. Please fill in your address.')
+
         else:
             complete += decimal_num
 
 ### Gender
-
-        st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                Gender*:</p>
-                """,
-                unsafe_allow_html=True,
-            )
-        gender = st.selectbox('Gender', ['Select Your Gender','Male', 'Female', 'Transgender', 
+        line_break()
+        gender = st.selectbox('Gender*', ['Select Your Gender','Male', 'Female', 'Transgender', 
         'Non-binary/non-conforming', 'Prefer not to respond'])
 
         if gender == 'Select Your Gender':
-            st.warning('Warning. Please seclect your preferred choice.', icon="⚠️")
+            warning('Warning. Please select your preferred choice.')
         
         else:
             complete += decimal_num
@@ -303,41 +288,19 @@ if selected == "User Application":
         col7, col8, col9 = st.columns(3)
 
         with col7:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                Date of Birth*:</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            month = st.number_input('Month',0,12)
+            line_break()
+            month = st.number_input('Month*',0,12)
         
         with col8:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            date = st.number_input('Date',0,31)
+            line_break()
+            date = st.number_input('Date*',0,31)
         
         with col9:
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(255,182,198,1)">Fir</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            year = st.number_input('Year', 1850,2022)
+            line_break()
+            year = st.number_input('Year*', 1850,2022)
                 
         if month == 0 or date == 0 or year == 1850:
-            st.warning('Warning. Please fill in your date of birth.', icon="⚠️")
+            warning('Warning. Please fill in your date of birth.')
         
         else:
             complete += decimal_num
@@ -356,32 +319,16 @@ if selected == "User Application":
 ##### Page 2
 
     with tab2:
-        st.markdown(
-            """
-            <br>
-            <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-            font-size: 2.5em;"><strong style="color: rgba(110,12,37,1)">
-            Please Answer the Questions Below:</p>
-            """,
-            unsafe_allow_html=True,
-        )       
+        instruction()      
         decimal_num = 2
 
 ### Has Credit Card or not
-        st.markdown(
-            """
-            <br>
-            <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-            font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-            Do You Have a Credit Card*:</p>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        card = st.selectbox('', ['Select your option', 'Yes', 'No'])
+        line_break()
+        card = st.selectbox('Do You Have a Credit Card*', 
+                            ['Select your option', 'Yes', 'No'])
 
         if card == 'Select your option':
-            st.warning('Warning. Please select your preferred option.', icon="⚠️")
+            warning('Warning. Please select your preferred option.')
 
         elif card == 'No':
             complete += third
@@ -389,7 +336,7 @@ if selected == "User Application":
             with st.expander("**Why having a credit card is beneficial?**"):
                 st.markdown("""
                     <br>
-                    <p  style="color:silver; font-family: Lucida Handwriting, cursive;
+                    <p  style="color:black; font-family: Lucida Handwriting, cursive;
                     font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
                     According to Expreian:</p>
 
@@ -406,26 +353,7 @@ if selected == "User Application":
                             <li style="color: rgba(110,12,37,1);">
                             Credit cards give you rewards: such as cash backs or cumulated points
                             that could be used toward purchases or traveling.</li>
-                            <li style="color: rgba(110,12,37,1);">
-                            Credit Cards offers customers the financial cushion to help
-                            afford during financial burdens like emergencies or purchasing 
-                            high end properties.</li>
-                            <li style="color: rgba(110,12,37,1);">
-                            Credit Cards offers more secruity against fraud and theft that such
-                            debit card and cash couldn't provide.</li>
-                        </ul>  
-                    </p>
-                    <br>
-                    <p style="color: rgba(110,12,37,1);"><strong>For more information please visit
-                    <a href='https://www.experian.com/blogs/ask-experian/do-you-really-need-a-credit-card/'
-                    style="color: rgba(110,12,37,1);">Experian</a>
-                    for more thorough details on how
-                    your questions could be answered.</strong></p>
-
-                    <br>
-                    <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                    font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                    Citation:</p>
+                        ~itation:</p>
 
                     <style> 
                     p {outline-color: rgba(110,12,37,1);}
@@ -445,71 +373,39 @@ if selected == "User Application":
             complete += thirdofthird
 
 ### Bank brand
-
-            st.markdown(
-                """
-                <br>
-                <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                Your Bank Brand*:</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            bank = st.text_input('Bank Brand (Chase)','')
+            line_break()
+            bank = st.text_input('Your Bank Brand (Chase)*','')
 
             if bank == '':
                 bank = None
-                st.warning('Warning. Please fill in the name of your bank.', icon="⚠️")
+                warning('Warning. Please fill in the name of your bank.')
             else:
                 complete += thirdofthird
 
 ### Transaction Made
-            st.markdown(
-                    """
-                    <br>
-                    <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                    font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                    Was there any transaction made with this credit card?*:</p>
-                    """,
-                    unsafe_allow_html=True,
-                )
-            option = st.selectbox('', ['Choose your option', 'Yes', 'No'])
+            line_break()
+            option = st.selectbox('Was there any transaction made with this credit card?*', 
+            ['Choose your option', 'Yes', 'No'])
 
             if option == 'Choose your option':
-                st.warning('Warning. Please select your preferred option.', icon="⚠️")
+                warning('Warning. Please select your preferred option.')
 
             elif option == 'No':
                 complete += thirdofthird
 
             else:
                 complete += thirdofthirdofthird
-### When
-                st.markdown(
-                        """
-                        <br>
-                        <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                        font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                        When was the most recent transaction made?*:</p>
-                        """,
-                        unsafe_allow_html=True,
-                    )
-                purchase_date = st.date_input('',)
+### When        
+                line_break()
+                purchase_date = st.date_input('When was the most recent transaction made?*',)
                 complete += thirdofthirdofthird
 
 ### How much
-                st.markdown(
-                        """
-                        <br>
-                        <p  style="color:silver; font-family: Lucida Handwriting, cursive;
-                        font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
-                        Transaction Amount*:</p>
-                        """,
-                        unsafe_allow_html=True,
-                    )
-                transaction_amt = st.number_input("", 0, 10000000, 0, 1000)
+                line_break()
+                transaction_amt = st.number_input('Transaction Amount*', 0, 10000000, 0, 1000)
 
                 if transaction_amt == 0:
-                    st.warning('Warning. Please select your preferred option.', icon="⚠️")
+                    warning('Warning. Please select your preferred option.')
 
                 elif transaction_amt != 0:
                     complete += thirdofthirdofthird
@@ -597,12 +493,8 @@ if selected == "User Application":
                 st.write('Transaction Amount: **${}**'.format(transaction_amt))
                 st.write('Date of transaction made: **{}**'.format(purchase_date))
 
-        st.markdown(
-            """
-            <br>
-            """,
-            unsafe_allow_html=True,
-        )
+        st.markdown("""<br>""",unsafe_allow_html=True,)
+
         box10, box11 = st.columns([1,3.5])
 
         with box10:
@@ -631,7 +523,7 @@ if selected == "User Application":
                     """
                         <br><br><br><br><br>
 
-                        <p  style="color:silver; font-family: Lucida Handwriting, cursive;
+                        <p  style="color:black; font-family: Lucida Handwriting, cursive;
                         font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspCongratulations, our AI model
                         has predicted that your credit card transaction is not fraud. To 
@@ -646,12 +538,12 @@ if selected == "User Application":
                 )
             
             else:
-                st.warning('Warning. Please call 1-800-847-2911 ASAP', icon="⚠️")                
+                warning('Warning. Please call 1-800-847-2911 ASAP')                
                 st.markdown(
                     """
                         <br><br><br><br><br>
 
-                        <p  style="color:silver; font-family: Lucida Handwriting, cursive;
+                        <p  style="color:black; font-family: Lucida Handwriting, cursive;
                         font-size: 1.5em;"><strong style="color: red">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspWarning, our AI model
                         has predicted that your credit card transaction is fraud. To 
@@ -727,15 +619,3 @@ if selected == "EDA":
         # sns.scatterplot(x=df['V13'], y=df['V12'], hue=df['Fraud'])
         # st.header('Scatter plot based on V13 and V12:')
         # st.pyplot(fig)
-
-
-
-
-
-
-
-        
-
-
-
-        
