@@ -43,6 +43,14 @@ def instruction():
         Please Answer the Questions Below:</p>""",
         unsafe_allow_html=True,)
 
+def confirm():
+    st.markdown(
+        """
+        <br>
+        <p  style="color:black; font-size: 1.5em;"><strong>
+        Please confirm your answers below:</p>""",
+        unsafe_allow_html=True,)
+
 st.set_page_config(
     page_title = "ACM AI User App"
 )
@@ -51,8 +59,7 @@ st.markdown(
     <style>
 
     [data-testid = "stAppViewContainer"]{
-        background-color: rgba(251, 238, 193, 1);
-        background-image: url("https://cdn.dribbble.com/users/1228088/screenshots/14881382/media/e8ae1e400862ae7410214f1a9680f392.png?compress=1&resize=1600x1200&vertical=top")
+        background-color: rgba(212, 185, 150, 1);
     }
 
     [data-testid = "stHeader"]{
@@ -64,7 +71,7 @@ st.markdown(
     }
 
     [data-testid = "stSidebar"]{
-        background-color: rgba(0,0,0,0);
+        background-color: rgba(160, 120, 85, 1);
         left: 2rem;
     }
     
@@ -240,11 +247,8 @@ if selected == "User Application":
             line_break()
             last = st.text_input('Last*', '')
 
-        if first == '' or last == '':
-            warning('Warning. Please fill in your first and last name.')
-        
-        else:
-            complete += decimal_num
+        if first != '' or last != '':
+            complete += decimal_num        
 
 ### Address
 
@@ -266,10 +270,7 @@ if selected == "User Application":
             line_break()
             zip = st.text_input('Zip Code*', '')
 
-        if address == '' or city == '' or state == '' or zip == '':
-            warning('Warning. Please fill in your address.')
-
-        else:
+        if address != '' or city != '' or state != '' or zip != '':
             complete += decimal_num
 
 ### Gender
@@ -277,10 +278,7 @@ if selected == "User Application":
         gender = st.selectbox('Gender*', ['Select Your Gender','Male', 'Female', 'Transgender', 
         'Non-binary/non-conforming', 'Prefer not to respond'])
 
-        if gender == 'Select Your Gender':
-            warning('Warning. Please select your preferred choice.')
-        
-        else:
+        if gender != 'Select Your Gender':
             complete += decimal_num
 
 ### DoB
@@ -299,11 +297,8 @@ if selected == "User Application":
             line_break()
             year = st.number_input('Year*', 1850,2022)
                 
-        if month == 0 or date == 0 or year == 1850:
-            warning('Warning. Please fill in your date of birth.')
-        
-        else:
-            complete += decimal_num
+        if month != 0 or date != 0 or year != 1850:
+             complete += decimal_num
 
         st.markdown(
             """
@@ -314,7 +309,10 @@ if selected == "User Application":
         age = 2022 - year
         # progress bar
         my_bar = st.progress(float(complete/100))
-        st.caption("You are {}% finished. Please access the next two pages at the top to complete your application.".format(round(complete,2)))
+        progression = round(complete,2)
+        st.caption("You are {}% finished. Please access the next two pages at the top to complete your application.".format(progression))
+        if progression < 33:
+            warning('Warning. Some inputs are missing.')
 
 ##### Page 2
 
@@ -327,40 +325,31 @@ if selected == "User Application":
         card = st.selectbox('Do You Have a Credit Card*', 
                             ['Select your option', 'Yes', 'No'])
 
-        if card == 'Select your option':
-            warning('Warning. Please select your preferred option.')
-
-        elif card == 'No':
+        if card == 'No':
             complete += third
 
             with st.expander("**Why having a credit card is beneficial?**"):
                 st.markdown("""
                     <br>
                     <p  style="color:black; font-family: Lucida Handwriting, cursive;
-                    font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
+                    font-size: 1.5em;"><strong style="color: black">
                     According to Expreian:</p>
 
                     <style> 
-                    p {outline-color: rgba(110,12,37,1);}
+                    p {outline-color: black;}
                     p.solid{outline-style:solid;}
                     </style>
 
                     <p class="solid">
                         <ul >
                         <br>
-                            <li style="color: rgba(110,12,37,1);">
+                            <li style="color: black;">
                             Credit Cards are useful tool to build credit.</li>
-                            <li style="color: rgba(110,12,37,1);">
+                            <li style="color: black;">
                             Credit cards give you rewards: such as cash backs or cumulated points
                             that could be used toward purchases or traveling.</li>
-                        ~itation:</p>
-
-                    <style> 
-                    p {outline-color: rgba(110,12,37,1);}
-                    p.solid{outline-style:solid;}
-                    </style>
-
-                    <p class="solid">
+                    <p>
+                        <br><strong>Citation:</strong><br>
                         &nbsp&nbspAxelton, Karen. “Do You Really Need a Credit Card?” 
                         Experian, Experian, 17 &nbsp&nbspNov. 2022, 
                         https://www.experian.com/blogs/ask-experian/do-you-really- &nbsp&nbspneed-a-credit-card/. 
@@ -369,7 +358,7 @@ if selected == "User Application":
                 unsafe_allow_html=True,
                 )
     
-        else:
+        elif card == 'Yes':
             complete += thirdofthird
 
 ### Bank brand
@@ -378,7 +367,6 @@ if selected == "User Application":
 
             if bank == '':
                 bank = None
-                warning('Warning. Please fill in the name of your bank.')
             else:
                 complete += thirdofthird
 
@@ -387,13 +375,10 @@ if selected == "User Application":
             option = st.selectbox('Was there any transaction made with this credit card?*', 
             ['Choose your option', 'Yes', 'No'])
 
-            if option == 'Choose your option':
-                warning('Warning. Please select your preferred option.')
-
-            elif option == 'No':
+            if option == 'No':
                 complete += thirdofthird
 
-            else:
+            elif option == 'Yes':
                 complete += thirdofthirdofthird
 ### When        
                 line_break()
@@ -404,12 +389,8 @@ if selected == "User Application":
                 line_break()
                 transaction_amt = st.number_input('Transaction Amount*', 0, 10000000, 0, 1000)
 
-                if transaction_amt == 0:
-                    warning('Warning. Please select your preferred option.')
-
-                elif transaction_amt != 0:
+                if transaction_amt != 0:
                     complete += thirdofthirdofthird
-
 
         st.markdown(
             """
@@ -419,18 +400,15 @@ if selected == "User Application":
         )
         # progress bar
         my_bar = st.progress(float(complete/100))
-        st.caption("You are {}% finished. Please access the next page at the top to complete your application.".format(round(complete,2)))
+        progression = round(complete,2)
+        st.caption("You are {}% finished. Please access the next page at the top to complete your application.".format(progression))
+        if progression < 66:
+            warning('Warning. Some inputs are missing.')
 
 #### Page 3
 
     with tab3:
-        st.markdown(
-            """
-            <p  style="font-size: 2em; line-height:2.5"><strong style="color: rgba(110,12,37,1)">
-            Please confirm your answers below:</p>
-            """,
-            unsafe_allow_html=True,
-        )    
+        confirm()
         selected = st.checkbox("I need to make changes")
 
         if selected:
@@ -524,7 +502,7 @@ if selected == "User Application":
                         <br><br><br><br><br>
 
                         <p  style="color:black; font-family: Lucida Handwriting, cursive;
-                        font-size: 1.5em;"><strong style="color: rgba(110,12,37,1)">
+                        font-size: 1.5em;"><strong style="color: black">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspCongratulations, our AI model
                         has predicted that your credit card transaction is not fraud. To 
                         ensure that your card is safe from theft and fraudulent, please refer
@@ -562,11 +540,6 @@ if selected == "User Application":
 if selected == "EDA":
     info = df.info()
 
-    # chart_select = st.sidebar.selectbox(
-    #     'Please pick the type opf plot you want to see',
-    #     ('Heat map', 'Box Plots', 'Scatter Plots')
-    # )
-
     chart_select = option_menu(
     menu_title=None,
     options=["Heat Map", "Box Plots", "Scatter Plots"],
@@ -576,46 +549,49 @@ if selected == "EDA":
     )
 
     st.title('Exploratory Data Analysis')
-    fig= plt.figure(figsize = (12, 9))
-
     if chart_select == 'Heat Map':
         corrmat = df.corr()
+        fig1, plot1 = plt.subplots(figsize = (12, 9))
         sns.heatmap(corrmat, vmax = .8, square = True)
 
         st.header('Heatmap of Correlation Matix:')
-        st.pyplot(plt.show())
+        st.pyplot(fig1)
 
-        plt.figure(figsize=(30,20))
+        fig2, plot2 = plt.subplots(figsize=(30,20))
         cor = df.corr()
         sns.heatmap(cor, annot=True, cmap=plt.cm.Reds)
-
-        st.header('Display Pearson correlation HeatMap for all variables:')
-        st.pyplot(plt.show())
+        st.pyplot(fig2)
 
     elif chart_select == 'Box Plots':
-        sns.set(rc={'figure.figsize':(25,5)})
         df['Fraud'] = df['Fraud'].astype(str)
+
+        fig3, plot3 = plt.subplots(figsize = (12, 9))
         plot = sns.boxplot(data = df, x = "Amount", y = "Fraud", showfliers = True)
         st.header('Box plot based on fraud or no fraud and amount:')
-        st.pyplot(fig)
+        st.pyplot(fig3)
 
-        # plot = sns.boxplot(data = df, x = "V2", y = "Fraud", showfliers = True)
-        # st.header('Box plot based on fraud or no fraud and V2:')
-        # st.pyplot(fig)
+        fig4, plot4 = plt.subplots(figsize = (25,5))
+        plot = sns.boxplot(data = df, x = "V2", y = "Fraud", showfliers = True)
+        st.header('Box plot based on fraud or no fraud and V2:')
+        st.pyplot(fig4)
 
-        # sns.boxplot(data = df, x = "V5", y = "Fraud", showfliers = True)
-        # st.header('Box plot based on fraud or no fraud and V5:')
-        # st.pyplot(fig2)
+        fig5, plot5 = plt.subplots(figsize = (25,5))
+        sns.boxplot(data = df, x = "V5", y = "Fraud", showfliers = True)
+        st.header('Box plot based on fraud or no fraud and V5:')
+        st.pyplot(fig5)
 
     elif chart_select == 'Scatter Plots':
+        fig6, plot6 = plt.subplots(figsize = (12, 9))
         sns.scatterplot(x=df['V13'], y=df['V17'], hue=df['Fraud'])
         st.header('Scatter plot based on V17 and V13:')
-        st.pyplot(fig)
+        st.pyplot(fig6)
 
-        # sns.scatterplot(x=df['V13'], y=df['V14'], hue=df['Fraud'])
-        # st.header('Scatter plot based on V13 and V14:')
-        # st.pyplot(fig)
+        fig7, plot7 = plt.subplots(figsize = (12, 9))
+        sns.scatterplot(x=df['V13'], y=df['V14'], hue=df['Fraud'])
+        st.header('Scatter plot based on V13 and V14:')
+        st.pyplot(fig7)
 
-        # sns.scatterplot(x=df['V13'], y=df['V12'], hue=df['Fraud'])
-        # st.header('Scatter plot based on V13 and V12:')
-        # st.pyplot(fig)
+        fig8, plot8 = plt.subplots(figsize = (12, 9))
+        sns.scatterplot(x=df['V13'], y=df['V12'], hue=df['Fraud'])
+        st.header('Scatter plot based on V13 and V12:')
+        st.pyplot(fig8)
