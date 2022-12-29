@@ -58,22 +58,34 @@ st.markdown(
     """
     <style>
 
-    [data-testid = "stAppViewContainer"]{
+    [data-testid = "stAppViewContainer"]{{
         background-color: rgba(212, 185, 150, 1);
-    }
+    }}
 
-    [data-testid = "stHeader"]{
+    [data-testid = "stHeader"]{{
     background-color: rgba(0,0,0,0);
-    }
+    }}
 
-    [data-testid = "stToolbar"]{
+    [data-testid = "stToolbar"]{{
         right: 2rem;
-    }
+    }}
 
-    [data-testid = "stSidebar"]{
+    [data-testid = "stSidebar"]{{
         background-color: rgba(160, 120, 85, 1);
         left: 2rem;
-    }
+    }}
+
+    #tabs-bui3-tab-1 {{
+            background-color: rgba(0, 0, 0, 0);
+    }}
+
+    #tabs-bui3-tab-2 {{
+            background-color: rgba(0, 0, 0, 0);
+    }}
+
+    #tabs-bui3-tab-3 {{
+            background-color: rgba(0, 0, 0, 0);
+    }}
     
     </style>
     """,
@@ -133,7 +145,7 @@ st.sidebar.markdown(
             <strong style="color: black">Rebecca:</strong> Cog Sci major 
             from Sixth College</li>
             <li style="color:black; font-family: Lucida Handwriting, cursive;">
-            <strong style="color: black">Rohan:</strong> ECE major from 
+            <strong style="color: black">Rohan:</strong> EE major from 
             Marshall College</li>
             <li style="color:black; font-family: Lucida Handwriting, cursive;">
             <strong style="color: black">Siya:</strong> CS major from 
@@ -153,34 +165,34 @@ st.sidebar.markdown(
 
     <p class="solid">
         <ul>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code">
             500 AI Machine Learning Deep Learning Computer Projects</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
             href="https://docs.google.com/document/d/1tLHnR9rI1fBc-b1BndALWmgHrIKGGWuHBzn-bqoyRbQ/edit?usp=sharing">
             Credit Card Fraud ML Project Overview</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2"
             href="https://www.youtube.com/watch?v=vmEHCJofslg&start=1">
             Python Pandas Data Science</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://stackoverflow.com/questions/70967042/matplotlib-not-working-in-macos-shows-error-i-tried-to-reinstall-everything-bu">
             Needing Help Installing MatplotLib Not Working in macOS</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_multi_metric_evaluation.html">
             Demotrations of Multi-Metric Evaluations on Cross_Val_Score and Gri_Search</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://www.youtube.com/watch?v=xl0N7tHiwlw">
             Building a Machine Learning Web App from Scratch using Streamlit</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://stackoverflow.com/questions/43691380/how-to-save-load-xgboost-model">
             How to Save & Load xgboost Model</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_3_GettingStarted/SimulatedDataset.html">
             How to Create a Web Application with Fraud Detection Handbook</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px; line-height: 2" 
             href="https://www.youtube.com/watch?v=0Hhqf8L-b_0">
             How to Install Anaconda on MacOS</a></li>
-            <li style="color: black;><a style="color: black; text-decoration:none; font-size: 14px;" 
+            <li style="color: black;"><a style="color: black; text-decoration:none; font-size: 14px;" 
             href="https://www.dev2qa.com/how-to-fix-the-python-pillow-error-importerror-dll-load-failed-while-importing-_imaging-the-specified-module-could-not-be-found/">
             How to Fix the Python Pillow Error ImportError</a></li>
         </ul>
@@ -501,7 +513,7 @@ if selected == "User Application":
                     """
                         <br><br><br><br><br>
 
-                        <p  style="color:black; font-family: Lucida Handwriting, cursive;
+                        <p  style="color:black;
                         font-size: 1.5em;"><strong style="color: black">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspCongratulations, our AI model
                         has predicted that your credit card transaction is not fraud. To 
@@ -521,7 +533,7 @@ if selected == "User Application":
                     """
                         <br><br><br><br><br>
 
-                        <p  style="color:black; font-family: Lucida Handwriting, cursive;
+                        <p  style="color:black;
                         font-size: 1.5em;"><strong style="color: red">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspWarning, our AI model
                         has predicted that your credit card transaction is fraud. To 

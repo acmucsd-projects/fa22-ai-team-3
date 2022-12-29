@@ -52,7 +52,7 @@ def load_model():
 
 model = load_model()
 
-df = pd.read_csv(".../input/creditcard.csv")
+df = pd.read_csv("../input/creditcard.csv")
 df = df.rename(columns={'Class': 'Fraud'})
 df['Fraud'] = df['Fraud'].astype(int)
 
