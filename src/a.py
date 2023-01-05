@@ -93,6 +93,7 @@ st.markdown(
 )
 
 ### Training Model
+@st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_model():
     with open('../models/XGBoost.pkl', 'rb') as file:
         data = joblib.load(file)
@@ -112,6 +113,7 @@ yData = Y.values
 xTrain, xTest, yTrain, yTest = train_test_split(
         xData, yData, test_size = 0.2, random_state = 42)
 
+@st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_pipeline():
     with open('../models/preprocessing_pipeline.pkl', 'rb') as f:
         pipe = joblib.load(f)
@@ -235,7 +237,7 @@ selected = option_menu(
     orientation="horizontal",
 )
 if selected == "User Application":
-    tab1, tab2, tab3,= st.tabs([" One ", " Two ", " Three "])
+    tab1, tab2, tab3,= st.tabs([" Personal Info", " Bank Info ", " Confirm Info "])
     complete = 0   
     decimal_num = float((100/3)/4 )
     third = 100/3
