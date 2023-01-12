@@ -26,6 +26,6 @@ If you're just getting started and want to learn the necessary tools going into 
 - Vincent Tu (Advisor):            [LinkedIn](https://www.linkedin.com/in/vincent-tu-422b18208/) | [GitHub](https://github.com/alckasoc)
 - Chuong Ngyuen(Team member):            [LinkedIn](https://www.linkedin.com/in/chuong-nguyen-profile) | [GitHub](https://github.com/chuongnguyen26)
 - Rebecca Chen (Team member):            [LinkedIn](https://www.linkedin.com/in/jiaying-chen-680b331b8/) | [GitHub](https://github.com/rcwoshimao)
-- Siya Tu (Team member):            [LinkedIn]() | [GitHub]()
+- Siya Kamboj (Team member):            [LinkedIn]() | [GitHub]()
 - Rohan (Team member):            [LinkedIn]() | [GitHub]()           
 - Arvin Zhang (Team member):            [LinkedIn](https://www.linkedin.com/in/arvin-zhang) | [GitHub](https://github.com/locks-az)            
