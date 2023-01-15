@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 import random
 import pickle
 import joblib
-import xgboost
+# import xgboost
 import time
 # from link_button import link_button
 
