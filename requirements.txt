@@ -1,5 +1,15 @@
 streamlit==1.16.0
 pandas==1.4.4
 numpy==1.21.5
-seaborn=0.11.2
-
+seaborn==0.11.2
+matplotlib==3.5.2
+joblib==1.2.0
+xgboost==0.90
+streamlit_option_menu
+scikit-learn
+# sklearn
+# sklearn.preprocessing
+# sklearn.linear_model
+# sklearn.pipeline
+# pprint
+# sklearn.model_selection
