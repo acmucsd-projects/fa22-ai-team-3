@@ -6,7 +6,8 @@ matplotlib==3.5.2
 joblib==1.2.0
 # xgboost==0.9
 streamlit_option_menu
-sklearn
+scikit-learn
+# sklearn
 # sklearn.preprocessing
 # sklearn.linear_model
 # sklearn.pipeline
