@@ -95,13 +95,13 @@ st.markdown(
 ### Training Model
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_model():
-    with open('../models/XGBoost.pkl', 'rb') as file:
+    with open('./models/XGBoost.pkl', 'rb') as file:
         data = joblib.load(file)
     return data
 
 model = load_model()
 
-df = pd.read_csv("../input/creditcard.csv")
+df = pd.read_csv("./input/creditcard.csv")
 df = df.rename(columns={'Class': 'Fraud'})
 df['Fraud'] = df['Fraud'].astype(int)
 
@@ -115,7 +115,7 @@ xTrain, xTest, yTrain, yTest = train_test_split(
 
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_pipeline():
-    with open('../models/preprocessing_pipeline.pkl', 'rb') as f:
+    with open('./models/preprocessing_pipeline.pkl', 'rb') as f:
         pipe = joblib.load(f)
     return pipe
 
