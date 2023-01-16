@@ -10,9 +10,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from pprint import pprint
 from sklearn.model_selection import train_test_split
+from PIL import Image
 import random
 import pickle
 import joblib
+
 # import xgboost
 import time
 # from link_button import link_button
@@ -95,27 +97,27 @@ st.markdown(
 ### Training Model
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_model():
-    with open('../models/XGBoost.pkl', 'rb') as file:
+    with open('./models/XGBoost.pkl', 'rb') as file:
         data = joblib.load(file)
     return data
 
 model = load_model()
 
-df = pd.read_csv("../input/creditcard.csv")
+df = pd.read_csv("./input/creditcard.csv")
 df = df.rename(columns={'Class': 'Fraud'})
-df['Fraud'] = df['Fraud'].astype(int)
+# df['Fraud'] = df['Fraud'].astype(int)
 
-X = df.drop(['Fraud'], axis = 1)
-Y = df["Fraud"]
+# X = df.drop(['Fraud'], axis = 1)
+# Y = df["Fraud"]
 
-xData = X.values
-yData = Y.values
-xTrain, xTest, yTrain, yTest = train_test_split(
-        xData, yData, test_size = 0.2, random_state = 42)
+# xData = X.values
+# yData = Y.values
+# xTrain, xTest, yTrain, yTest = train_test_split(
+#         xData, yData, test_size = 0.2, random_state = 42)
 
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_pipeline():
-    with open('../models/preprocessing_pipeline.pkl', 'rb') as f:
+    with open('./models/preprocessing_pipeline.pkl', 'rb') as f:
         pipe = joblib.load(f)
     return pipe
 
@@ -552,8 +554,6 @@ if selected == "User Application":
 
 
 if selected == "EDA":
-    info = df.info()
-
     chart_select = option_menu(
     menu_title=None,
     options=["Heat Map", "Box Plots", "Scatter Plots"],
@@ -564,48 +564,34 @@ if selected == "EDA":
 
     st.title('Exploratory Data Analysis')
     if chart_select == 'Heat Map':
-        corrmat = df.corr()
-        fig1, plot1 = plt.subplots(figsize = (12, 9))
-        sns.heatmap(corrmat, vmax = .8, square = True)
-
-        st.header('Heatmap of Correlation Matix:')
-        st.pyplot(fig1)
-
-        fig2, plot2 = plt.subplots(figsize=(30,20))
-        cor = df.corr()
-        sns.heatmap(cor, annot=True, cmap=plt.cm.Reds)
-        st.pyplot(fig2)
-
+        image = Image.open('./images/correlation.png')
+        st.image(image, caption ='correlation')
+    
+        image1 = Image.open('./images/correlation2.png')
+        st.image(image1, caption="correlation2")
+ 
     elif chart_select == 'Box Plots':
-        df['Fraud'] = df['Fraud'].astype(str)
-
-        fig3, plot3 = plt.subplots(figsize = (12, 9))
-        plot = sns.boxplot(data = df, x = "Amount", y = "Fraud", showfliers = True)
+        image = Image.open('./images/box_plot1.png')
         st.header('Box plot based on fraud or no fraud and amount:')
-        st.pyplot(fig3)
+        st.image(image, caption="box_plot1")
 
-        fig4, plot4 = plt.subplots(figsize = (25,5))
-        plot = sns.boxplot(data = df, x = "V2", y = "Fraud", showfliers = True)
+        image2 = Image.open('./images/box_plot2.png')
         st.header('Box plot based on fraud or no fraud and V2:')
-        st.pyplot(fig4)
+        st.image(image, caption="box_plot2")
 
-        fig5, plot5 = plt.subplots(figsize = (25,5))
-        sns.boxplot(data = df, x = "V5", y = "Fraud", showfliers = True)
+        image3 = Image.open('./images/box_plot3.png')
         st.header('Box plot based on fraud or no fraud and V5:')
-        st.pyplot(fig5)
-
+        st.image(image, caption="box_plot3")
+    
     elif chart_select == 'Scatter Plots':
-        fig6, plot6 = plt.subplots(figsize = (12, 9))
-        sns.scatterplot(x=df['V13'], y=df['V17'], hue=df['Fraud'])
-        st.header('Scatter plot based on V17 and V13:')
-        st.pyplot(fig6)
-
-        fig7, plot7 = plt.subplots(figsize = (12, 9))
-        sns.scatterplot(x=df['V13'], y=df['V14'], hue=df['Fraud'])
-        st.header('Scatter plot based on V13 and V14:')
-        st.pyplot(fig7)
-
-        fig8, plot8 = plt.subplots(figsize = (12, 9))
-        sns.scatterplot(x=df['V13'], y=df['V12'], hue=df['Fraud'])
-        st.header('Scatter plot based on V13 and V12:')
-        st.pyplot(fig8)
+       image = Image.open('./images/scatter_plot1.png')
+       st.header('Scatter plot based on V17 and V13:')
+       st.image(image, caption="scatter_plot1")
+ 
+       image2 = Image.open('./images/scatter_plot2.png')
+       st.header('Scatter plot based on V13 and V14:')
+       st.image(image2, caption="scatter_plot2")
+ 
+       image3 = Image.open('./images/scatter_plot3.png')
+       st.header('Scatter plot based on V13 and V12:')
+       st.image(image3, caption="scatter_plot3")
