@@ -53,6 +53,17 @@ def confirm():
         Please confirm your answers below:</p>""",
         unsafe_allow_html=True,)
 
+row = [[ 1.00000000e+01,  1.44904378e+00, -1.17633883e+00,
+         9.13859833e-01, -1.37566665e+00, -1.97138317e+00,
+        -6.29152139e-01, -1.42323560e+00,  4.84558879e-02,
+        -1.72040839e+00,  1.62665906e+00,  1.19964395e+00,
+        -6.71439778e-01, -5.13947153e-01, -9.50450454e-02,
+         2.30930409e-01,  3.19674668e-02,  2.53414716e-01,
+         8.54343814e-01, -2.21365414e-01, -3.87226474e-01,
+        -9.30189652e-03,  3.13894411e-01,  2.77401580e-02,
+         5.00512287e-01,  2.51367359e-01, -1.29477954e-01,
+         4.28498709e-02,  1.62532619e-02,  7.80000000e+00]]
+
 st.set_page_config(
     page_title = "ACM AI User App"
 )
@@ -102,18 +113,6 @@ def load_model():
     return data
 
 model = load_model()
-
-df = pd.read_csv("./input/creditcard.csv")
-df = df.rename(columns={'Class': 'Fraud'})
-# df['Fraud'] = df['Fraud'].astype(int)
-
-# X = df.drop(['Fraud'], axis = 1)
-# Y = df["Fraud"]
-
-# xData = X.values
-# yData = Y.values
-# xTrain, xTest, yTrain, yTest = train_test_split(
-#         xData, yData, test_size = 0.2, random_state = 42)
 
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_pipeline():
@@ -503,10 +502,6 @@ if selected == "User Application":
             with st.spinner("Please wait for the algorithm to be executed..."):
                 time.sleep(5)
 
-            ind = random.randint(0, (age + transaction_amt)%df.shape[0])
-            row = df.iloc[ind]
-            row = row.drop('Fraud')
-            row = np.expand_dims(row, axis = 0)
             row = pipe.transform(row)
             prediction = model.predict(row)
 
