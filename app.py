@@ -570,28 +570,28 @@ if selected == "EDA":
         image1 = Image.open('./images/correlation2.png')
         st.image(image1, caption="correlation2")
  
-    # elif chart_select == 'Box Plots':
-    #     image = Image.open('./images/box_plot1.png')
-    #     st.header('Box plot based on fraud or no fraud and amount:')
-    #     st.image(image, caption="box_plot1")
+    elif chart_select == 'Box Plots':
+        image = Image.open('./images/box_plot1.png')
+        st.header('Box plot based on fraud or no fraud and amount:')
+        st.image(image, caption="box_plot1")
 
-    #     image2 = Image.open('./images/box_plot2.png')
-    #     st.header('Box plot based on fraud or no fraud and V2:')
-    #     st.image(image, caption="box_plot2")
+        image2 = Image.open('./images/box_plot2.png')
+        st.header('Box plot based on fraud or no fraud and V2:')
+        st.image(image, caption="box_plot2")
 
-    #     image3 = Image.open('./images/box_plot3.png')
-    #     st.header('Box plot based on fraud or no fraud and V5:')
-    #     st.image(image, caption="box_plot3")
+        image3 = Image.open('./images/box_plot3.png')
+        st.header('Box plot based on fraud or no fraud and V5:')
+        st.image(image, caption="box_plot3")
     
-    # elif chart_select == 'Scatter Plots':
-    #    image = Image.open('./images/scatter_plot1.png')
-    #    st.header('Scatter plot based on V17 and V13:')
-    #    st.image(image, caption="scatter_plot1")
+    elif chart_select == 'Scatter Plots':
+       image = Image.open('./images/scatter_plot1.png')
+       st.header('Scatter plot based on V17 and V13:')
+       st.image(image, caption="scatter_plot1")
  
-    #    image2 = Image.open('./images/scatter_plot2.png')
-    #    st.header('Scatter plot based on V13 and V14:')
-    #    st.image(image2, caption="scatter_plot2")
+       image2 = Image.open('./images/scatter_plot2.png')
+       st.header('Scatter plot based on V13 and V14:')
+       st.image(image2, caption="scatter_plot2")
  
-    #    image3 = Image.open('./images/scatter_plot3.png')
-    #    st.header('Scatter plot based on V13 and V12:')
-    #    st.image(image3, caption="scatter_plot3")
+       image3 = Image.open('./images/scatter_plot3.png')
+       st.header('Scatter plot based on V13 and V12:')
+       st.image(image3, caption="scatter_plot3")
