@@ -9,7 +9,7 @@ The official ACM AI The Real Team Tu repository.
 
 ## 1. Resources
 
-If you're just getting started and want to learn the necessary tools going into this project, check out [resources.md](https://github.com/acmucsd-projects/fa22-ai-team-3/blob/main/resources.md)!
+- [Our App](https://chuongnguyen26-fa22-ai-team-3-app-rt9hxr.streamlit.app)
 
 ## 2. App walk through
 
