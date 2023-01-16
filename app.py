@@ -14,10 +14,17 @@ from PIL import Image
 import random
 import pickle
 import joblib
+import requests
+from streamlit_lottie import st_lottie
 
 # import xgboost
 import time
 # from link_button import link_button
+def load_lottieurl(url:str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 
 def name_intro(name, major_college):
      st.markdown("""
@@ -53,6 +60,19 @@ def confirm():
         Please confirm your answers below:</p>""",
         unsafe_allow_html=True,)
 
+animate = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_wbwrgmka.json")
+
+st.markdown("<h1 style='text-align: center; font-size: 20'>Dive Into Credit Card Fraud</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; font-size: 20'>By the Real Team Tu</h4>", unsafe_allow_html=True)
+line_break()
+
+
+st_lottie(
+    animate,
+    height = 400,
+)
+line_break()
+
 row = [[ 1.00000000e+01,  1.44904378e+00, -1.17633883e+00,
          9.13859833e-01, -1.37566665e+00, -1.97138317e+00,
         -6.29152139e-01, -1.42323560e+00,  4.84558879e-02,
@@ -64,9 +84,9 @@ row = [[ 1.00000000e+01,  1.44904378e+00, -1.17633883e+00,
          5.00512287e-01,  2.51367359e-01, -1.29477954e-01,
          4.28498709e-02,  1.62532619e-02,  7.80000000e+00]]
 
-st.set_page_config(
-    page_title = "ACM AI User App"
-)
+# st.set_page_config(
+#     page_title = "ACM AI User App"
+# )
 st.markdown(
     """
     <style>
@@ -218,10 +238,22 @@ st.sidebar.markdown(
             <a style="color: black; text-decoration:none; line-height: 2"
             href="https://dribbble.com/shots/14881382-lab-see-the-future-first">
             https://dribbble.com/shots/14881382-lab-see-the-future-first.</a></li>
+            <li style="color: black;font-size: 14px;">
+            <a style="color: black; text-decoration:none; line-height: 2"
+            href="https://lottiefiles.com/114317-banking">
+            Priyanshi Khanna's Animation</a></li>
+            <li style="color: black;font-size: 14px;">
+            <a style="color: black; text-decoration:none; line-height: 2"
+            href="https://lottiefiles.com/129769-thank-you-for-participating">
+            Aaron Davis's Animation</a></li>
         </ul>
         <p style="color:black">
         Above are some of the cites that we would like to acknowledge the work and writings used
-        in order for our project to be made possible.
+        in order for our project to be made possible. 
+        </p>
+        <p style="color:black">
+        (Note: All animations used in this application are from Lottie Files
+        which are free and have been permitted by creators for usage.)
         </p>
     </p><br><br><br>
     """,
@@ -507,11 +539,10 @@ if selected == "User Application":
 
             if (f"{prediction}") == '[0.]':
                 st.balloons()
-
+                animate2 = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_I2vHhFyKEb.json")
                 st.markdown(
                     """
-                        <br><br><br><br><br>
-
+                        <br><br><br><br>
                         <p  style="color:black;
                         font-size: 1.5em;"><strong style="color: black">
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbspCongratulations, our AI model
@@ -521,10 +552,12 @@ if selected == "User Application":
                         style="color: rgba(110,75,37,1);"> Michigan Department 
                         of Attorney General</a> for more consulting on how to protect
                         your credit card and most importantly your finances. Once again,
-                        thank you for choosing our service and we wish a wonderful day.</p>
+                        thank you for choosing our service and we wish you a wonderful day.</p>
                     """,
                     unsafe_allow_html=True
                 )
+                line_break()
+                st_lottie(animate2,height=300)
             
             else:
                 warning('Warning. Please call 1-800-847-2911 ASAP')                
