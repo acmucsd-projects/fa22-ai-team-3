@@ -105,15 +105,15 @@ model = load_model()
 
 df = pd.read_csv("./input/creditcard.csv")
 df = df.rename(columns={'Class': 'Fraud'})
-df['Fraud'] = df['Fraud'].astype(int)
+# df['Fraud'] = df['Fraud'].astype(int)
 
-X = df.drop(['Fraud'], axis = 1)
-Y = df["Fraud"]
+# X = df.drop(['Fraud'], axis = 1)
+# Y = df["Fraud"]
 
-xData = X.values
-yData = Y.values
-xTrain, xTest, yTrain, yTest = train_test_split(
-        xData, yData, test_size = 0.2, random_state = 42)
+# xData = X.values
+# yData = Y.values
+# xTrain, xTest, yTrain, yTest = train_test_split(
+#         xData, yData, test_size = 0.2, random_state = 42)
 
 @st.cache(hash_funcs={'xgboost.sklearn.XGBRegressor': id})
 def load_pipeline():
@@ -554,8 +554,6 @@ if selected == "User Application":
 
 
 if selected == "EDA":
-    info = df.info()
-
     chart_select = option_menu(
     menu_title=None,
     options=["Heat Map", "Box Plots", "Scatter Plots"],
@@ -565,12 +563,12 @@ if selected == "EDA":
     )
 
     st.title('Exploratory Data Analysis')
-    # if chart_select == 'Heat Map':
-    #     image = Image.open('./images/correlation.png')
-    #     st.image(image, caption ='correlation')
+    if chart_select == 'Heat Map':
+        image = Image.open('./images/correlation.png')
+        st.image(image, caption ='correlation')
     
-    #     image1 = Image.open('./images/correlation2.png')
-    #     st.image(image1, caption="correlation2")
+        image1 = Image.open('./images/correlation2.png')
+        st.image(image1, caption="correlation2")
  
     # elif chart_select == 'Box Plots':
     #     image = Image.open('./images/box_plot1.png')
