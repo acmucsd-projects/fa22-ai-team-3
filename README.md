@@ -11,6 +11,7 @@ The official ACM AI The Real Team Tu repository.
 ## 1. Resources
 
 - [Our App](https://chuongnguyen26-fa22-ai-team-3-app-rt9hxr.streamlit.app)
+- [Our Presentation](https://docs.google.com/presentation/d/1WYZ-qgkKUHk-WgwDZpxysWq-WS-AqI2Ajovd0sB8ASg/edit?usp=sharing)
 
 ## 2. Structure
 
@@ -20,7 +21,7 @@ The official ACM AI The Real Team Tu repository.
 
 ## 4. Difficulties
 
-[Insert some text on the difficulties you faced and how you solved them (images and GIFs are awesome).]
+- Chuong Nguyen - Throughout this project, I faced many difficulties, like wrapping my head around the concept of Exploratory Data Analysis, fitting and training the computer on Linear Regression Model, and creating a workable streamlit web app. I spent many hours googling and understanding how ML works and to getting familiar with terms like hyper-parameter, EDA, pipeline, notebook, fitting, pre-processing, training, pip install, and more. Working on the project along with my school works was definitely overwhelming, but the accomplishments I achieved and the friends I made proved to be fruitful. I never regretted being part of this project. I am grateful to have Vincent Tu as my mentor along with my teammates Rohan, Rebecca, Siya, Max, and Arvin. Thank You for all of the time we spent together. Vincent, I am looking forward to being a mentee of yours again. 
 
 ## 5. Author Info
 
