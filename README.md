@@ -34,7 +34,7 @@ Our app is divided into two sections: the first with a form taking user inputs t
 - Vincent Tu (Advisor):            [LinkedIn](https://www.linkedin.com/in/vincent-tu-422b18208/) | [GitHub](https://github.com/alckasoc)
 - Chuong Ngyuen(Team member):            [LinkedIn](https://www.linkedin.com/in/chuong-nguyen-profile) | [GitHub](https://github.com/chuongnguyen26)
 - Rebecca Chen (Team member):            [LinkedIn](https://www.linkedin.com/in/jiaying-chen-680b331b8/) | [GitHub](https://github.com/rcwoshimao)
-- Siya Kamboj (Team member):            [LinkedIn]() | [GitHub]()
+- Siya Kamboj (Team member):            [LinkedIn](https://www.linkedin.com/in/siya-kamboj-5b6334232/) | [GitHub](https://github.com/SiyaKamboj)
 - Rohan (Team member):            [LinkedIn](https://www.linkedin.com/in/rohan-nambimadom-088869243/) | [GitHub](https://github.com/TDKCoder)           
 - Arvin Zhang (Team member):            [LinkedIn](https://www.linkedin.com/in/arvin-zhang) | [GitHub](https://github.com/locks-az)            
 - Max Weng (Team member):               [LinkedIn](https://www.linkedin.com/in/max-weng-635b421b8) | [Github](https://github.com/maxwn04)
