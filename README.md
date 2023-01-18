@@ -15,9 +15,11 @@ The official ACM AI The Real Team Tu repository.
 
 ## 2. Structure
 
+The repo is organized into different folder containing each team members' machine learning model and Exploratory Data, as well meeting notes from each meeting (mentor and team meetings), and scatterplots of our collective EDA.
+
 ## 3. App Walkthrough
 
-[Insert some text on the structure of this repo and how everything is organized.]
+Our app is divided into two sections: the first with a form taking user inputs that predicts the likelihood of credit card fraud using our model, and the second section containing the results of our EDA analysis and the various graphs we made for it. We listed our names in the tabs as well as references to important websites that helped us with our project.
 
 ## 4. Difficulties
 
@@ -35,4 +37,4 @@ The official ACM AI The Real Team Tu repository.
 - Siya Kamboj (Team member):            [LinkedIn]() | [GitHub]()
 - Rohan (Team member):            [LinkedIn](https://www.linkedin.com/in/rohan-nambimadom-088869243/) | [GitHub](https://github.com/TDKCoder)           
 - Arvin Zhang (Team member):            [LinkedIn](https://www.linkedin.com/in/arvin-zhang) | [GitHub](https://github.com/locks-az)            
-- Max Weng (Team member):               [LinkedIn]() \ [Github]()
+- Max Weng (Team member):               [LinkedIn]() | [Github]()
