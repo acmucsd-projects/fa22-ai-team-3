@@ -23,6 +23,8 @@ The official ACM AI The Real Team Tu repository.
 
 - Chuong Nguyen - Throughout this project, I faced many difficulties, like wrapping my head around the concept of Exploratory Data Analysis, fitting and training the computer on Linear Regression Model, and creating a workable streamlit web app. I spent many hours googling and understanding how ML works and to getting familiar with terms like hyper-parameter, EDA, pipeline, notebook, fitting, pre-processing, training, pip install, and more. Working on the project along with my school works was definitely overwhelming, but the accomplishments I achieved and the friends I made proved to be fruitful. I never regretted being part of this project. I am grateful to have Vincent Tu as my mentor along with my teammates Rohan, Rebecca, Siya, Max, and Arvin. Thank You for all of the time we spent together. Vincent, I am looking forward to being a mentee of yours again. 
 
+- Rohan Nambimadom - During the course of this project, I faced issues with getting my python environment to work, understanding how the models worked, and figuring out how to manage my time to work on both the project and finish school work. Working with others brought me to learn how to ask for help and get the necessary help I need from both my teammates and the internet. Additionally, in getting my environemnt to work, I learned the importance of communicating my problems and, later on, communicating neccesary information such as that the version of XGBoost we had to use was version 0.90.
+
 ## 5. Author Info
 
 [Insert your info]
