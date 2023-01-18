@@ -37,4 +37,4 @@ Our app is divided into two sections: the first with a form taking user inputs t
 - Siya Kamboj (Team member):            [LinkedIn]() | [GitHub]()
 - Rohan (Team member):            [LinkedIn](https://www.linkedin.com/in/rohan-nambimadom-088869243/) | [GitHub](https://github.com/TDKCoder)           
 - Arvin Zhang (Team member):            [LinkedIn](https://www.linkedin.com/in/arvin-zhang) | [GitHub](https://github.com/locks-az)            
-- Max Weng (Team member):               [LinkedIn]() | [Github]()
+- Max Weng (Team member):               [LinkedIn](https://www.linkedin.com/in/max-weng-635b421b8) | [Github](https://github.com/maxwn04)
