@@ -27,6 +27,8 @@ Our app is divided into two sections: the first with a form taking user inputs t
 
 - Rohan Nambimadom - During the course of this project, I faced issues with getting my python environment to work, understanding how the models worked, and figuring out how to manage my time to work on both the project and finish school work. Working with others brought me to learn how to ask for help and get the necessary help I need from both my teammates and the internet. Additionally, in getting my environemnt to work, I learned the importance of communicating my problems and, later on, communicating neccesary information such as that the version of XGBoost we had to use was version 0.90.
 
+- Max Weng - For me, the biggest challenge was figuring out how the python libraries worked and how ml projects are created and structured. Coming from a background of algorithmic coding competitions, I was very unfamiliar with the process of creating such a project. I had to learn the different patterns that these libraries use and how to use them to create a project. It took a lot of googling and reading through documentation to get a basic understanding of how to do each of the steps required in our project, and I had to learn how to effectively break down challenges into smaller pieces and try to solve each step as they came.
+
 ## 5. Author Info
 
 [Insert your info]
